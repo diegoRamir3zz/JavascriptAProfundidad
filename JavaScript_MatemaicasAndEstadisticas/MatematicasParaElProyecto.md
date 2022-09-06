@@ -25,7 +25,7 @@ Para medir el perimetro de un lado, lo que hacemos es sumar cada lado del triang
 Ejemplo: Si un triangulo mide 6cm, 6cm a los lados y 4cm en la base, sabemos que el perimetro del triangulo es de 6 + 6 + 4 = 16cm.
 </p>
 
-###### 1) Medir el area de un triangulo
+###### 2) Medir el area de un triangulo
 
 <p>
 El area del triangulo podemos saberlo multiplicando la base por la altura del triangulo dividido en 2
@@ -33,4 +33,21 @@ El area del triangulo podemos saberlo multiplicando la base por la altura del tr
 Ejemplo: si nuestra base es de 4cm y nuestra altura es de 5.5cm el resultado es: 11cm al cuadrado
 
 (4 * 5.5) / 2 = 11cm al cuadrado
+</p>
+
+##### Circulo
+
+######  1) Perimetro (Circunferencia) del circulo
+<p>
+Para saber la circunferencia del objeto debemos medir la mitar del circulo (Radio) hacia uno de los lados y multiplicarlo por 2 lo que nos da el diametro del circulo. Esto lo multiplicamos por PI.
+
+Ejemplo: (Radio * 2) * PI
+</p>
+
+######  2) Area de un circulo
+
+<p>
+Para saber el area de un circulo uilizamos el radio al cuadrado Multiplicado por PI
+
+Ejemplo: Radio² * PI
 </p>
