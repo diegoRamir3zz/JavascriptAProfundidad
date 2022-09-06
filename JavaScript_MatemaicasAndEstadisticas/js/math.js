@@ -19,3 +19,17 @@ function calcularTriangulo(lado1, lado2, base, altura) {
 }
 calcularTriangulo(6, 6, 4, 5.5)
 console.groupEnd('triangulo')
+
+// Calculado medidas del circulo
+console.group('circulo')
+function calcularCirculo(radio) {
+  const diametro = radio * 2
+  const radioAlCuadrado = Math.pow(radio, 2) //De esta manera elevamos a radio al cuadrado
+  const PI = Math.PI
+  console.log({
+    circunferencia: `La circunferencia es ${diametro * PI}`,
+    area: `El area es ${radioAlCuadrado * PI}`
+  });
+}
+calcularCirculo(3)
+console.groupEnd('circulo')
