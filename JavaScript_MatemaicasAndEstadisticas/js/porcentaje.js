@@ -1,16 +1,21 @@
-const inputPrice = document.querySelector('#price')
-const inputDiscount = document.querySelector('#discount')
 const btn = document.querySelector('button')
 
 btn.addEventListener('click', e => {
   e.preventDefault()
-  
-  const price = parseInt(inputPrice.value)
-  const discount = parseInt(inputDiscount.value)
+  const inputDiscount = document.querySelector('#discount').value
+  const inputPrice = document.querySelector('#price').value
 
-  const total = (price * (100 - discount)) / 100
-  
-  showResults(total)
+  if(inputPrice === '' || inputDiscount === '') {
+    showResults('Revisa que los campos esten llenos')
+  }
+  else {
+    const price = parseInt(inputPrice)
+    const discount = parseInt(inputDiscount)
+
+    const total = (price * (100 - discount)) / 100
+
+    showResults(`${total}$`)
+  }
 })
 
 function showResults(total) {
@@ -19,7 +24,7 @@ function showResults(total) {
   div.removeChild(div.firstChild)
 
   const p = document.createElement('p')
-  p.innerText = total
+  p.innerText =  total
   
   div.appendChild(p)
 }
