@@ -60,3 +60,11 @@ Para saber el area de un circulo uilizamos el radio al cuadrado Multiplicado por
 
 Ejemplo: Radio² * PI
 </p>
+
+##### Porcentaje de descuentos.
+
+<p>
+Para saber el porcentaje de descuentos utilizaremos la siguiente formula.
+
+[ P * ( 100 - D ) ] / 100
+</p>
