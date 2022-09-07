@@ -35,6 +35,15 @@ Ejemplo: si nuestra base es de 4cm y nuestra altura es de 5.5cm el resultado es:
 (4 * 5.5) / 2 = 11cm al cuadrado
 </p>
 
+##### Calculando altura de un triangulo isósceles
+ <p>
+ Formula: h = √ a² - b² / 2
+ 
+ h = altura
+ a = lados
+ b = base
+ </p>
+
 ##### Circulo
 
 ######  1) Perimetro (Circunferencia) del circulo
