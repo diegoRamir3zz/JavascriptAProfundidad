@@ -7,14 +7,15 @@ btn.addEventListener('click', e => {
 
   if(inputPrice === '' || inputDiscount === '') {
     showResults('Revisa que los campos esten llenos')
-  }
-  else {
+  } else if (inputDiscount > 100){
+    showResults('Aja, Verifica que el campo sea correcto')
+  } else {
     const price = parseInt(inputPrice)
     const discount = parseInt(inputDiscount)
 
     const total = (price * (100 - discount)) / 100
 
-    showResults(`${total}$`)
+    showResults(`$${total}`)
   }
 })
 
