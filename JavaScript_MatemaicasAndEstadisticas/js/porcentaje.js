@@ -1,21 +1,38 @@
 const btn = document.querySelector('button')
 
+const cupons = [
+  {
+    title: 'Di3go50',
+    discount: 50
+  },
+  {
+    title: 'Platzi60',
+    discount: 60
+  },
+  {
+    title: 'Apr3nde30',
+    discount: 30
+  }
+]
+
+
 btn.addEventListener('click', e => {
   e.preventDefault()
-  const inputDiscount = document.querySelector('#discount').value
+  const inputCupon = document.querySelector('#cupon').value
   const inputPrice = document.querySelector('#price').value
+  const cuponDiscount = cupons.find( cupon => cupon.title === inputCupon)
 
-  if(inputPrice === '' || inputDiscount === '') {
-    showResults('Revisa que los campos esten llenos')
-  } else if (inputDiscount > 100){
-    showResults('Aja, Verifica que el campo sea correcto')
-  } else {
+  if(inputPrice === '') {
+    showResults('Ingresa un precio valido')
+  } else if (inputCupon === '') {
+    showResults(`$${inputPrice}`)
+  } else if (!!cuponDiscount) {
     const price = parseInt(inputPrice)
-    const discount = parseInt(inputDiscount)
-
-    const total = (price * (100 - discount)) / 100
-
+    const cupon = cuponDiscount.discount
+    const total = (price * (100 - cupon)) / 100
     showResults(`$${total}`)
+  } else {
+    showResults('Ingresa un cupon valido')
   }
 })
 
