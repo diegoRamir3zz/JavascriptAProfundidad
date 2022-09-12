@@ -37,3 +37,24 @@ const Natalia = new Student(
     'Curso Practico de HTML y CSS'
   ]
 )
+
+// creando prototipos mediante la sintaxis de clasess
+class Student2 {
+  constructor({ name, age, approvedCourses = [], email,  }) {
+
+    this.name = name
+    this.age = age
+    this.email = email
+    this.approvedCourses = approvedCourses
+  }
+
+  addAprovedCourses(newCourse) {
+    this.approvedCourses.push(newCourse)
+  }
+}
+
+const carlitos = new Student2({
+  name: 'Carlitos Steban', 
+  age: 20, 
+  email: 'Carlits@carlos.com'
+})
