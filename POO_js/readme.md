@@ -70,3 +70,36 @@ Y las instancias de prototipo que creamos no solo obtienen los metodos de dicho 
 Teniendo todo esto en mente, podemos decir que los objetos literales son instancias del prototipo Object
 
 Es decir que Object (con O mayuscula) es el prototipo madre
+
+###### Clases
+
+Otra manera de crear prototipos es con la sintaxis de las clases.
+
+Por ejemplo: 
+```javascript
+class Student2 {
+  constructor({ name, age, approvedCourses = [], email,  }) {
+
+    this.name = name
+    this.age = age
+    this.email = email
+    this.approvedCourses = approvedCourses
+  }
+
+  addAprovedCourses(newCourse) {
+    this.approvedCourses.push(newCourse)
+  }
+}
+```
+Los parametros que necesitemos recibir se los indicamos al constructor.
+y por fuera del construnctor pero en el interior de la clase podemos crear nuestros metodos.
+
+El siguiente ejemplo nos permite crear una instancia de este prototipo. 
+
+```javascript
+const carlitos = new Student2({
+  name: 'Carlitos Steban', 
+  age: 20, 
+  email: 'Carlits@carlos.com'
+})
+```
