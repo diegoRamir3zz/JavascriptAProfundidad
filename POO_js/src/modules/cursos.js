@@ -11,13 +11,17 @@ class Cursos {
     id,
     name,
     teacher,
-    clases = []
+    clases = [],
+    isFree = false,
+    lang = 'spanish'
   }) {
     this.id = id
     // Utilizamos por convención el guión bajo, para indicar que estamos usando el encapsulamiento,
     this._name = name
     this.teacher = teacher
     this.clases = clases
+    this.isFree = isFree,
+    this.lang = lang
   }
 
   get name() {
@@ -52,17 +56,21 @@ const programacionBasica = new Cursos({
     diegoG,
     juanDC
   },
+  isFree: true
 })
 const dataScientist = new Cursos({
   id: 3,
   name: 'Data Scientist',
   teacher: oscarB,
+  lang: 'english'
 })
 
 const CursoDisenoVieojuegos = new Cursos({
   id: 4,
   name: 'Curso de Diseño de vieojuegos',
   teacher: juanDC,
+  lang: 'english',
+  isFree: 'spanish'
 })
 
 export {

@@ -201,3 +201,59 @@ export { PlatziClass }
 ```
 
 Al hacer esto indicamos que solo lo que estamos exportando con la palabra reservada **export** sera accesible por los usuarios.
+
+##### 3) Herencia
+Utilizamos la herencia cuando varios objetos comparten propiedades, sin embargo su logica es diferente.
+
+Lo que hacemos es crear una superClase que contenga todos las propiedades que necesitamos, y luego cremos las subClases.
+
+para indicarle a la subclase que debe heredar las propiedades de su clase madre utilizamos la palabra reservada extends y luego le indicamos cual es la clase madre, es decir de que clase queremos heredar las propiedades.
+
+ejemplo: 
+
+**Clase Madre o Super Clase**
+
+```javascript
+class Student {
+  constructor({
+    name,
+    age, 
+    username, 
+    email,
+    twitter = undefined,
+    instagram = undefined,
+    facebook = undefined,
+    approvedCourses = [],
+    learningPaths = []
+  }) {
+    this.name = name
+    this.age = age
+    this.username = username 
+    this.email = email
+    this.socialMedia = {
+      twitter, 
+      instagram, 
+      facebook
+    }
+    this.approvedCourses = approvedCourses
+    this.learningPaths = learningPaths
+  }
+}
+```
+**Sub Clases**
+
+```javascript
+class FreeStudent extends Student {
+  constructor(props) {
+    super(props)
+  }
+  approvedCourse(newCourse) {
+    if(newCourse.isFree) {
+      this.approvedCourses.push(newCourse)
+    } else {
+      console.warn(`Lo sentimos, ${this.name}, solo puedes tomar cursos free`)
+    }
+  }
+}
+```
+A la Sub Clase le pasamos la propiedades de la Super Clase mediante el constructor y ademas de utilizar el metodo super. Como se muestra en el ejemplo anterior
