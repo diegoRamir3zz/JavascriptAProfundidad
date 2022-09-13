@@ -108,3 +108,53 @@ const carlitos = new Student2({
 
 ##### 1) Abstracción
 La abstracción consite en sacar los datos de un objeto para crear su prototipo. A partir de ese prototipo pudemos crear nuestras instancias.
+
+##### Pilares de la programación orientada a objetos
+
+##### 2) Encapsulamiento
+El encapsulamiento es la manera en la que podemos guardar, proteger o limitar el acceso a nuestros prototipos u objetos.
+
+Por ejemplo: 
+
+```javascript
+class Cursos {
+  constructor({
+    id,
+    name,
+    teacher,
+    clases = []
+  }) {
+    this.id = id
+	encapsulamiento,
+    this._name = name
+    this.teacher = teacher
+    this.clases = clases
+  }
+
+  get name() {
+    return this._name
+  }
+
+  set name(newNameOfCourse) {
+    if (newNameOfCourse !== this._name) {
+      console.error('No puedes modificar este campo')
+    } else {
+      this._name = newNameOfCourse
+    }
+  }
+
+}
+
+const computacionBasica = new Cursos({
+  id: 1,
+  name: 'Curso de computación basica',
+  teacher: freddy
+})
+```
+Al utilizar guión bajo de la siguiente manera:  **this._name** indicamos que queremos aplicar el encapsulamiento en dicha propiedad.
+
+###### get = getter
+La sintaxis *get* (getter) vincula una propiedad de objeto a una función que se llamará cuando se busque esa propiedad.
+
+###### set = setter
+La sintaxis *set* (setter) vincula una propiedad de objeto a una función que se llamará cuando haya un intento de establecer un nuevo valor.
