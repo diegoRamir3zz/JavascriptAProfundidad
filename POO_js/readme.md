@@ -103,3 +103,8 @@ const carlitos = new Student2({
   email: 'Carlits@carlos.com'
 })
 ```
+
+##### Pilares de la programación orientada a objetos
+
+##### 1) Abstracción
+La abstracción consite en sacar los datos de un objeto para crear su prototipo. A partir de ese prototipo pudemos crear nuestras instancias.
