@@ -257,3 +257,47 @@ class FreeStudent extends Student {
 }
 ```
 A la Sub Clase le pasamos la propiedades de la Super Clase mediante el constructor y ademas de utilizar el metodo super. Como se muestra en el ejemplo anterior
+
+##### 4) Polimorfismo
+
+El polimorfismo permite que las subclases tengan métodos con el mismo nombre que los de sus superclases pero con diferentes implementaciones.
+
+Por ejemplo, si heredamos del Prototipo madre el siguiente metodo:
+
+**Nota**: En Comments no estamos declarando la propiedad studentRole porque por defecto esta en "Student"
+
+```javascript
+addComment(CommentContent) {
+    const comment = new Comments({
+      content: CommentContent,
+      studentName: this.name
+    })
+    comment.publicar()
+  }
+```
+El polimorfismo nos permite cambiar algunos valores desde un prototipo hijo (subclase)
+
+Por ejemplo, podemos cambiar el valor de studentRole. Por defecto es 'Estudent' pero al cambiarlo ahora queda como 'Teacher'
+
+Por ejemplo: 
+```javascript
+class TeacherStudent extends Student {
+  constructor(props) {
+    super(props)
+  }
+  approvedCourse(newCourse) {
+      this.approvedCourses.push(newCourse)
+  }
+ 
+  addComment(CommentContent) {
+    const comment = new Comments({
+      content: CommentContent,
+      studentName: this.name,
+      studentRole: 'Teacher' 
+    })
+    comment.publicar()
+  }
+  
+}
+```
+

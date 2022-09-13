@@ -1,5 +1,6 @@
 import {webSchool, dataSchool, vgsSchool} from './modules/LearningPath.js'
 import { computacionBasica, programacionBasica, dataScientist, CursoDisenoVieojuegos} from './modules/cursos.js'
+import {Comments} from './modules/Comments.js'
 // Creando el prototipo
 class Student {
   constructor({
@@ -25,6 +26,15 @@ class Student {
     this.approvedCourses = approvedCourses
     this.learningPaths = learningPaths
   }
+
+  addComment(CommentContent) {
+    const comment = new Comments({
+      content: CommentContent,
+      studentName: this.name
+    })
+    comment.publicar()
+  }
+
 }
 
 class FreeStudent extends Student {
@@ -59,6 +69,24 @@ class ExpertStudent extends Student {
       this.approvedCourses.push(newCourse)
   }
 }
+class TeacherStudent extends Student {
+  constructor(props) {
+    super(props)
+  }
+  approvedCourse(newCourse) {
+      this.approvedCourses.push(newCourse)
+  }
+ 
+  addComment(CommentContent) {
+    const comment = new Comments({
+      content: CommentContent,
+      studentName: this.name,
+      studentRole: 'Teacher' 
+    })
+    comment.publicar()
+  }
+  
+}
 
 // Instanciando un objeto del prototipo
 const juan = new FreeStudent({
@@ -82,7 +110,11 @@ const pepito = new BasicStudent({
   }
 })
 
-console.log({
-  juan, 
-  pepito
-});
+const fredy = new TeacherStudent({
+  name: 'Freddy vega',
+  username: 'Freddier',
+  email: 'Freddier@Freddier.com'
+})
+
+console.log(juan.addComment('Me gusto mucho el curso de POO'));
+console.log(fredy.addComment('Exelente! Que gran trabajo equipo'));
