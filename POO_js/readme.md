@@ -158,3 +158,46 @@ La sintaxis *get* (getter) vincula una propiedad de objeto a una función que se
 
 ###### set = setter
 La sintaxis *set* (setter) vincula una propiedad de objeto a una función que se llamará cuando haya un intento de establecer un nuevo valor.
+
+##### Modulos ES6
+Cuando convertimos un script en un modulo lo que hacemos es 'ocultar' el contenido importante, exepto aquello que estamos importando.
+
+Indicamos un modulo de la siguiente manera
+
+```javascript
+<script type="module" src="./index.js"></script>
+```
+Ademas en el documento ./index.js exportamos de la siguiente manera
+por ejemplo.
+
+```javascript
+function videoPlay(id) {
+  const urlSecreta = `https://urlquedesamosoucltar.com${id}`
+  console.log('Se esta pausando el video')
+}
+function videoStop(id) {
+  const urlSecreta = `https://urlquedesamosoucltar.com${id}`
+  console.log('Pausando el video')
+}
+class PlatziClass {
+  constructor({
+    name,
+    videoID
+  }) {
+    this.name = name
+    this.videoID = videoID
+  }
+
+  reproducir() {
+    videoPlay(this.videoID)
+  }
+
+  pausa() {
+    videoStop(this.videoID)
+  }
+}
+
+export { PlatziClass }
+```
+
+Al hacer esto indicamos que solo lo que estamos exportando con la palabra reservada **export** sera accesible por los usuarios.
