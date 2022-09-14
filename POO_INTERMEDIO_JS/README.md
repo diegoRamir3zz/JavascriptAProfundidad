@@ -96,3 +96,32 @@ name: {
 */
 ```
 Cuando nos consentramos en el encapsulamiento (Que es uno de los pilares de la programación orientada a objetos) estos metodos nos seran muy utiles para limitar quien puede modificar o eliminar nuestros objetos.
+
+#### Como funciona la memoria en JS
+
+Las variables son referencias a un espacio en memoria.
+Los navegadores web usan dos tipos de memorias: Stack 🏃‍♂️ y Heap 🐢.
+La memoria Stack es muy rápida, pero sin tanto espacio. Aquí se guardan los valores primitivos (booleanos, strings, números…).
+La memoria Heap es más lenta, pero permite guardar enormes cantidades de información.
+
+NOTA: Los nombres de las variables son los apuntadores a la información.
+Por eso cuando copiamos un objeto, en otra variable y modificamos el objeto desde la copia, enrealidad estamos modificando el objeto original. (Lo mismo sucede si modificamos el objeto desde el original)
+
+Por ejemplo: 
+
+```javascript
+const jugadorUno = {
+  name: "andrea",
+  age: 20,
+  correo: "Andres@mail.com" 
+}
+
+const jugadorDos = jugadorUno
+jugadorDos.name = "nath"
+jugadoDos.age = 18
+
+console.log(jugadorDos) // {name: 'nath', age: 18, correo: 'Andres@mail.com
+console.log(jugadorUno) // {name: 'nath', age: 18, correo: 'Andres@mail.com'}
+```
+
+Entender cómo funciona la memoria en JavaScript no solo será útil para aprender POO, sino también para programación funcional.
